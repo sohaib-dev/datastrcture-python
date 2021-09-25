@@ -40,8 +40,7 @@ class LinkedList:
         if is_data_present:
             return data_value_index
         else:
-            print(f'Searched data {data_value}, does not exist.')
-            return
+            raise Exception(f'Searched data {data_value}, does not exist.')
 
     def insert_at_beginning(self, data):
         node = Node(data, self.head)
@@ -96,7 +95,7 @@ class LinkedList:
 
     def list_to_linklist(self, data_values):
         if len(data_values) == 0:
-            print("List is empty")
+            raise Exception("List is empty")
             return
         else:
             self.head = None

@@ -162,20 +162,12 @@ class LinkedList:
             list_iterator = list_iterator.next_node
         print(list_str)
 
+
 if __name__ == "__main__":
+
     linklist = LinkedList()
-    linklist.list_to_linklist([1,2,3,4])
-    print("Length of linklist : ", linklist.get_length())
-    linklist.remove_index(3)
-    linklist.insert_at_index(2,00)
-    linklist.insert_after_value(3,20)
-    print("nth_node: " , linklist.get_nth_node(2))
-    print("Search : ", linklist.search_by_value(10))
-
-    linklist.list_to_linklist([0, 1, 0, 2])
-    linklist.insert_after_value(0,20)
+    linklist.list_to_linklist([1, 2, 3, 4])
     linklist.remove_by_value(2)
-
 
     linklist.print_linklist()
 

@@ -2,6 +2,14 @@ Python list is a dynamic array.
 
 Lookup by Index : O(1)
 
+Lookup by Value : O(n) 
+
+Traversal : O(n)
+
+Insert Element : O(n)
+
+Delete Element : O(n)
+
 Arrray's Insertion Complexity : O(n)
 
 Linked-list Complexity:

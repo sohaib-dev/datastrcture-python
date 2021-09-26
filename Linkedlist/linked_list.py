@@ -1,5 +1,5 @@
 class Node:
-
+    """Node class contain the data and reference to the next node in the memory"""
     def __init__(self, data=None, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -11,6 +11,7 @@ class LinkedList:
         self.head = None
 
     def get_nth_node(self, index):
+        """Return the data of specified node."""
         if index < 0 or index >= self.get_length():
             raise Exception("Invalid Index")
         if index == 0:
@@ -28,6 +29,7 @@ class LinkedList:
         return indexed_data
 
     def search_by_value(self, data_value):
+        """Return the index of the searched value"""
         list_iterator = self.head
         is_data_present = False
         data_value_index = 0
@@ -43,10 +45,12 @@ class LinkedList:
             raise Exception(f'Searched data {data_value}, does not exist.')
 
     def insert_at_beginning(self, data):
+        """Insert the element at the beginning of linked-list"""
         node = Node(data, self.head)
         self.head = node
 
     def insert_at_end(self, data):
+        """Insert the element at the end of linked-list"""
         if self.head is None:
             self.insert_at_beginning(data)
             return
@@ -58,6 +62,7 @@ class LinkedList:
             tmp.next_node = Node(data, None)
 
     def insert_at_index(self, index, data):
+        """Insert the element at the specified index"""
         if index < 0 or index >= self.get_length():
             raise Exception("Invalid Index")
         if index == 0:
@@ -74,6 +79,7 @@ class LinkedList:
             list_iterator = list_iterator.next_node
 
     def insert_after_index(self, index, data):
+        """Insert the element after the specified index"""
         if index < 0 or index > self.get_length():
             raise Exception("Invalid Index")
         list_iterator = self.head
@@ -87,6 +93,7 @@ class LinkedList:
             list_iterator = list_iterator.next_node
 
     def insert_after_value(self, data_after, data_to_inset):
+        """Insert new element after first occurrence of the specified value"""
         data_after_index = self.search_by_value(data_after)
         if data_after_index is None:
             raise Exception(f'Searched value does not exist')
@@ -94,6 +101,7 @@ class LinkedList:
             self.insert_after_index(data_after_index, data_to_inset)
 
     def list_to_linklist(self, data_values):
+        """Convert the list input into linked-list"""
         if len(data_values) == 0:
             raise Exception("List is empty")
             return
@@ -103,6 +111,7 @@ class LinkedList:
                 self.insert_at_end(data)
 
     def get_length(self):
+        """Return the length of linked-list"""
         if self.head is None:
             return 0
         list_iterator = self.head
@@ -113,6 +122,7 @@ class LinkedList:
         return count
 
     def remove_index(self, index):
+        """Remove element from the specified index"""
         if index < 0 or index >= self.get_length():
             raise Exception("Invalid Index")
 
@@ -129,6 +139,7 @@ class LinkedList:
             list_iterator = list_iterator.next_node
 
     def remove_by_value(self, data_value):
+        """Remove the first occurrence of the specified value"""
         if self.head.data == data_value:
             self.head = self.head.next_node
             return
@@ -149,6 +160,7 @@ class LinkedList:
             return
 
     def print_linklist(self):
+        """Print the linked-list"""
         if self.head is None:
             print("Linklist is empty.")
             return

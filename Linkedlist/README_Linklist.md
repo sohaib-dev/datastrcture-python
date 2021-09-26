@@ -1,8 +1,8 @@
 Python list is a dynamic array.
 
-Arrray Insertion Complexity : O(n)
+Arrray's Insertion Complexity : O(n)
 
-Linklist Complexity:
+Linked-list Complexity:
 
 Insert Element at Beginning : O(1)
 
@@ -23,9 +23,9 @@ LinkedList has two main advantage over array:
 2- Insertion/Deletion is easier
 
 
-LinkedList has following drawbacks:
+LinkedList has the following drawbacks:
 
-1- Random access is not allowed and you need to traverse sequentially to access the element.
+1- Random access is not allowed, you need to traverse sequentially to access the element.
 
 2- Extra memory space is required to store the nex_node pointer.
 

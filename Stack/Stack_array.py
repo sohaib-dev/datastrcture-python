@@ -33,7 +33,7 @@ class Stack:
         return self.stack[-1]
 
     def is_empty(self):
-        """Check if the element is empty or not."""
+        """Check if the stack is empty or not."""
         return len(self.stack) == 0
 
 

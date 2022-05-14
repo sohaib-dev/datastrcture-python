@@ -22,6 +22,16 @@ class Stack:
         """It will initialize the head of linked-list for stack."""
         self.head = None
 
+    def __str__(self):
+        """Print the stack"""
+        list_iterator = self.head
+        list_str = ''
+
+        while list_iterator:
+            list_str += str(list_iterator.data) + ' --> '
+            list_iterator = list_iterator.next_node
+        return list_str[:-5]
+
     def push(self, data):
         """It will add the node at the stack."""
         if self.head is None:
@@ -74,35 +84,14 @@ class Stack:
             return True
         return False
 
-    def print_stack(self):
-        """Print the stack"""
-        if self.head is None:
-            print("stack is empty.")
-            return
-
-        list_iterator = self.head
-        list_str = ''
-
-        while list_iterator:
-            list_str += str(list_iterator.data) + ' --> '
-            list_iterator = list_iterator.next_node
-        print(list_str)
-
 
 if __name__ == '__main__':
     stack = Stack()
-    print(stack.pop())
-    print(stack.is_empty())
-    stack.push(6)
-    print(stack.pop())
     print(stack.is_empty())
     stack.push(7)
     stack.push(8)
     stack.push(9)
-    stack.print_stack()
+    print(stack)
+    print(stack.is_empty())
     print(stack.peek())
     print(stack.pop())
-    print(stack.peek())
-    print(stack.pop())
-    stack.print_stack()
-

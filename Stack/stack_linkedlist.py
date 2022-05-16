@@ -20,11 +20,11 @@ class Stack:
 
     def __init__(self):
         """It will initialize the head of linked-list for stack."""
-        self.head = None
+        self._head = None
 
     def __str__(self):
         """Print the stack"""
-        list_iterator = self.head
+        list_iterator = self._head
         list_str = ''
 
         while list_iterator:
@@ -34,12 +34,12 @@ class Stack:
 
     def push(self, data):
         """It will add the node at the stack."""
-        if self.head is None:
-            self.head = StackNode(data=data)
+        if self._head is None:
+            self._head = StackNode(data=data)
             print("The element {} is pushed on stack.".format(data))
             return
 
-        temp_node = self.head
+        temp_node = self._head
         while temp_node.next_node:
             temp_node = temp_node.next_node
 
@@ -49,11 +49,11 @@ class Stack:
     def pop(self):
         """It will remove the node from top of stack."""
         if self.is_empty():
-            return str(-maxsize - 1)
-        temp_node = self.head
+            return None
+        temp_node = self._head
         if temp_node.next_node is None:
             last_node = temp_node
-            self.head = None
+            self._head = None
             return last_node.data
         while temp_node.next_node:
             if temp_node.next_node.next_node is None:
@@ -67,7 +67,7 @@ class Stack:
         """Returns the top element of stack."""
         if self.is_empty():
             return str(-maxsize - 1)
-        temp_node = self.head
+        temp_node = self._head
         if temp_node.next_node is None:
             last_node = temp_node
             return last_node.data
@@ -80,9 +80,14 @@ class Stack:
 
     def is_empty(self):
         """Check if the stack is empty or not."""
-        if self.head is None:
+        if self._head is None:
             return True
         return False
+
+    @property
+    def head(self):
+        """head property is used to access the private variable _head by super() object."""
+        return self._head
 
 
 if __name__ == '__main__':

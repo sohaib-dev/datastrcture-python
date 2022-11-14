@@ -178,7 +178,8 @@ if __name__ == "__main__":
 
     linklist = LinkedList()
     linklist.list_to_linklist([1, 2, 3, 4])
-    linklist.remove_by_value(2)
+    linklist.insert_at_index(2, 40)
+    # linklist.remove_by_value(2)
 
     linklist.print_linklist()
 
